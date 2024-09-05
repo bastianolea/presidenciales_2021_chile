@@ -219,3 +219,11 @@ eleciones_nacional <- eleciones_4 |>
   mutate(ganador_pais = ifelse(votos == votos_pais_mayoria, candidatura, NA)) |>
   fill(ganador_pais, .direction = "updown") |>
   ungroup()
+
+
+# guardar ----
+readr::write_csv2(eleciones_mesa, "datos_procesados/presidenciales_2021_mesa.csv")
+readr::write_csv2(eleciones_local, "datos_procesados/presidenciales_2021_local.csv")
+readr::write_csv2(eleciones_comuna, "datos_procesados/presidenciales_2021_comuna.csv")
+readr::write_csv2(eleciones_region, "datos_procesados/presidenciales_2021_region.csv")
+readr::write_csv2(eleciones_nacional, "datos_procesados/presidenciales_2021_nacional.csv")
